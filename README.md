@@ -201,7 +201,7 @@ python face_recognition.py
 
 ## 👤 Author
 
-**Snehasish Das**
+**SNEHASISH DAS**
 Final Year CSBS Student | AI & Full-Stack Developer
 
 🔗 GitHub: [https://github.com/Unknowncoder3](https://github.com/Unknowncoder3)
