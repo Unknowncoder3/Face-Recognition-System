@@ -1,137 +1,96 @@
-# 👤 Real-Time Face Recognition System (Computer Vision)
+# 👤 Real-Time Face Recognition System
 
-An **end-to-end face recognition system** built using **computer vision and machine learning techniques** to detect, encode, and recognize human faces in images or live video streams.
+<p align="center">
+  <b>Computer-vision pipeline for face detection, facial embeddings and similarity-based identity matching.</b>
+</p>
 
-This project demonstrates **practical application of face detection, feature extraction, similarity matching**, and highlights **real-world challenges** such as lighting, pose variation, and accuracy trade-offs.
-
----
-
-## 🔍 Project Overview
-
-Face recognition is widely used in:
-
-* Security & surveillance systems
-* Attendance management
-* Identity verification
-* Access control systems
-
-This project implements a **complete face recognition pipeline**, starting from raw images/video input to identity prediction.
+<p align="center">
+  <a href="https://github.com/Unknowncoder3/Face-Recognition-System">Repository</a>
+</p>
 
 ---
 
-## 🧠 How It Works (Pipeline)
+## 📌 Overview
 
-```
-Input Image / Video
+This project demonstrates an end-to-end face-recognition workflow using Python and computer-vision libraries.
+
+The pipeline processes image/video input, detects faces, converts them into numerical representations and compares those representations against known identities.
+
+> **Responsible-use note:** Facial recognition involves biometric data and significant privacy implications. Any real-world deployment requires informed consent, secure handling of biometric information, appropriate access controls and compliance with applicable laws.
+
+---
+
+## 🧠 Recognition Pipeline
+
+```text
+Image / Video Frame
         ↓
 Face Detection
         ↓
-Face Encoding (Feature Extraction)
+Face Region Extraction
         ↓
-Similarity Comparison
+Facial Encoding / Embedding
+        ↓
+Distance-Based Comparison
+        ↓
+Threshold Decision
         ↓
 Identity Prediction
 ```
 
 ---
 
-## ⚙️ Core Concepts Used
+## ✨ Features
 
-### 🧩 Face Detection
-
-* Detects faces from images or video frames
-* Crops facial regions for further processing
-
-### 🧠 Face Encoding
-
-* Converts each detected face into a **numerical embedding**
-* Encodings represent unique facial features
-
-### 🔍 Face Matching
-
-* Compares encodings using **distance-based similarity**
-* Applies a threshold to decide **match vs non-match**
-
-### 🎯 Prediction Logic
-
-* Lowest distance → best match
-* Threshold tuning to balance:
-
-  * False positives
-  * False negatives
+- Real-time/video-oriented face recognition workflow
+- Image input support
+- Facial feature encoding
+- Distance-based similarity matching
+- Configurable recognition threshold
+- Extendable known-face dataset
 
 ---
 
-## ✨ Key Features
+## 🧰 Tech Stack
 
-* ✅ Real-time face recognition
-* 📸 Image & video support
-* 🧠 Feature-based face encoding
-* 📏 Distance-based similarity matching
-* ⚙️ Adjustable recognition threshold
-* 🧪 Easy to extend for larger datasets
-
----
-
-## 🛠️ Tech Stack
-
-* **Python**
-* **OpenCV**
-* **Face Recognition / dlib**
-* **NumPy**
-* **Machine Learning concepts**
-* **Computer Vision**
+- **Python**
+- **OpenCV** — image/video processing
+- **face_recognition / dlib** — face detection/encoding where configured
+- **NumPy** — numerical operations
 
 ---
 
 ## 📂 Project Structure
 
-```
-face-recognition/
-│
+```text
+Face-Recognition-System/
 ├── images/
 │   ├── known_faces/
 │   └── test_images/
-│
 ├── face_recognition.py
 ├── requirements.txt
 └── README.md
 ```
 
-*(Structure may vary slightly based on implementation)*
+> Repository structure can differ if additional modules or assets are added.
 
 ---
 
-## 🚀 Getting Started
-
-### 1️⃣ Clone the Repository
+## ⚙️ Setup
 
 ```bash
-git clone https://github.com/Unknowncoder3/face-recognition.git
-cd face-recognition
+git clone https://github.com/Unknowncoder3/Face-Recognition-System.git
+cd Face-Recognition-System
+python -m venv .venv
 ```
 
----
-
-### 2️⃣ Create Virtual Environment (Recommended)
-
-```bash
-python -m venv venv
-source venv/bin/activate   # macOS/Linux
-venv\Scripts\activate      # Windows
-```
-
----
-
-### 3️⃣ Install Dependencies
+Activate the environment and install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-### 4️⃣ Run the Application
+Run the application according to the entry point in the repository, for example:
 
 ```bash
 python face_recognition.py
@@ -139,77 +98,69 @@ python face_recognition.py
 
 ---
 
-## 📸 Sample Output
+## 📈 Performance Considerations
 
-> Detected faces are highlighted with bounding boxes and predicted names.
+Recognition quality depends on factors including:
 
-*(Add screenshots or GIFs here for maximum impact)*
+- Lighting
+- Camera quality
+- Face angle and pose
+- Image resolution
+- Distance from camera
+- Recognition threshold
+- Quality and diversity of known-face images
 
-```md
-![Face Recognition Output](screenshots/output.png)
-```
-
----
-
-## 📈 Performance & Limitations
-
-### ✅ Strengths
-
-* Accurate under good lighting
-* Works well for frontal faces
-* Fast recognition for small datasets
-
-### ⚠️ Limitations
-
-* Accuracy decreases with:
-
-  * Poor lighting
-  * Extreme face angles
-  * Low-resolution images
-* Scalability challenges for very large datasets
-* Sensitive to threshold selection
-
-> These limitations reflect **real-world production constraints**, not implementation flaws.
+A production system should be evaluated using representative data and metrics such as false-acceptance and false-rejection rates rather than relying on a single informal accuracy figure.
 
 ---
 
-## 🔐 Ethical Considerations
+## 🔐 Privacy & Security
 
-* Facial recognition raises **privacy and consent concerns**
-* Should be used responsibly with user awareness
-* Avoid misuse in surveillance without legal approval
+Biometric systems require careful handling of sensitive information.
 
----
+Recommended safeguards for any real deployment include:
 
-## 🎯 What This Project Demonstrates (For Recruiters)
-
-* Strong understanding of **computer vision pipelines**
-* Ability to implement **ML concepts end-to-end**
-* Awareness of **accuracy trade-offs & real-world constraints**
-* Clean problem decomposition and system thinking
-* Practical, deployable AI use case
+- Explicit user consent
+- Secure storage and transmission
+- Minimum necessary data retention
+- Access controls
+- Audit logging
+- Clear deletion procedures
+- Appropriate legal/compliance review
 
 ---
 
-## 📄 Resume Bullet (Use This)
+## 🎯 Skills Demonstrated
 
-```
-• Built a real-time face recognition system using computer vision techniques, implementing face detection, facial encoding, and similarity-based identity matching while analyzing accuracy and real-world limitations.
-```
-
----
-
-## 👤 Author
-
-**SNEHASISH DAS**
-Final Year CSBS Student | AI & Full-Stack Developer
-
-🔗 GitHub: [https://github.com/Unknowncoder3](https://github.com/Unknowncoder3)
-📧 Email: [snehasishdas146@gmail.com](mailto:snehasishdas146@gmail.com)
+- Computer vision fundamentals
+- Face detection
+- Feature extraction / embeddings
+- Similarity matching
+- Real-time image processing
+- Threshold-based classification
+- Awareness of biometric-system limitations
 
 ---
 
-⭐ **If you find this project useful, give it a star!**
+## 🔮 Future Improvements
+
+- Add quantitative benchmark evaluation
+- Improve handling of pose and lighting variation
+- Add a configurable attendance layer
+- Add secure identity-data management
+- Add automated tests
+- Improve large-gallery search performance
 
 ---
-# Face-Recognition-System
+
+## 👨‍💻 Author
+
+**Snehasish Das** — Data Analyst | Applied AI Developer
+
+- GitHub: https://github.com/Unknowncoder3
+- LinkedIn: https://www.linkedin.com/in/snehasish-das-b75a551b0/
+- Email: snehasishdas146@gmail.com
+
+---
+
+⭐ Explore the repository for the implementation details and computer-vision workflow.
